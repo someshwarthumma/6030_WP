@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .row{
+        text-align: center;
+        background-color: rgb(80, 80, 172);
+        color: whitesmoke;
+        border-radius:5px;
+    }
+    .innerContainer{
+        
+        background-color: white;
+        border-radius:10px;
+        /* margin-left:50px;
+        margin-right:50px; */
+        margin:50px;
+        padding-top:30px;
+        padding-bottom:30px;
+        padding-left: 20px;
+        padding-right:20px;
+
+        
+    }
+    body{
+        background-color:rgb(121, 204, 196)
+    }
+    .referButton{
+        text-align:right;
+
+    }
+</style>
+<body>
+
+<div class="container-fluid outerContainer">
+    <div class="row">
+        <h1><b>Learning by doing!</b></h1>
+    </div>
+    <div class = "container-fluid innerContainer">
+        <p>Q.1 &nbsp; Each computer has the built in computer set that it knows how to execute by design</p>
+        <div class="alert alert-info"><!--Information alert -->
+            <strong>Confused !</strong> Refer the following link to have 
+                <a href="https://google.com/" class="alert-link">Hint..</a><!-- link -->
+        </div>
+        <form>
+            <label class="radio-inline">
+                <input type="radio" name="optradio" checked>True
+            </label>
+            <br>
+            <label class="radio-inline">
+                <input type="radio" name="optradio">False
+            </label>
+            <br>
+        </form>
+        <br>
+        <div class="alert alert-danger alert-dismissible fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Oops!</strong> Your response is Incorrect.
+        </div>
+        <br>
+        <p>Q.2 &nbsp; The computer uses inteligence to execute instructions </p>
+        <div class="alert alert-info"><!--Information alert -->
+            <strong>Confused !</strong> Refer the following link to have 
+                <a href="https://google.com/" class="alert-link">Hint..</a><!-- link -->
+        </div>
+        <form>
+            <label class="radio-inline">
+                <input type="radio" name="optradio" checked>True
+            </label>
+            <br>
+            <label class="radio-inline">
+                <input type="radio" name="optradio">False
+            </label>
+        </form>
+        <div class="alert alert-success alert-dismissible fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Hurray!</strong> Your response is correct!
+    </div>
+
+  </div>
+  <div class = "referButton">
+  <button type="button" class="btn btn-link">  Reset this Activity</button>
+</div>
+
+</div>
+    
+</body>
+</html>
