@@ -1,0 +1,23 @@
+body{
+    background: greenyellow;
+}
+.leftside{
+    padding-left: 15px;
+}
+.rightHeading{
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgb(29, 207, 207);
+}
+.leftside{
+    background: greenyellow
+}
+.profilePic{
+    align-content: middle; border-radius: 50%;
+}
+.couse1{
+    background-color:aquamarine; 
+}
+.pic{
+    height:120px;
+}
