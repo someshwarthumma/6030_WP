@@ -1,0 +1,31 @@
+
+.FRow{
+    text-align: center;
+    background-color: rgb(80, 80, 172);
+    color: whitesmoke;
+    border-radius:5px;
+}
+.innerContainer{
+    
+    background-color: white;
+    border-radius:10px;
+    /* margin-left:50px;
+    margin-right:50px; */
+    margin:50px;
+    padding-top:30px;
+    padding-bottom:30px;
+    padding-left: 20px;
+    padding-right:20px;
+
+    
+}
+body{
+    background-color:rgb(121, 204, 196)
+}
+.referButton{
+    text-align:right;
+
+}
+#Hinter{
+    display: none;
+}
