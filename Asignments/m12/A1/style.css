@@ -1,0 +1,17 @@
+.heading{
+    text-align: center;
+    background-color: rgb(80, 80, 172);
+    color: whitesmoke;
+    border-radius:5px;
+    font-size: 5ex
+}
+.credentials{
+    background-color:whitesmoke;
+}
+#commentarea{
+    text-align: left;
+    background-color: rgb(113, 241, 152);
+    color: whitesmoke;
+    border-radius:5px;
+    font-size: 3ex
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Week-2_Exam</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row heading">Comment Box!!</div>
+        <div class="credentials">
+            <form>
+                <div class="form-group">
+                    <label for="usr">Name:</label>
+                    <input id = "name" type="text" class="form-control" id="usr">
+                </div>
+                <div class="form-group">
+                    <label  for="pwd">Password:</label>
+                    <input id = "password" type="password" class="form-control" id="pwd">
+                </div>
+            </form>
+
+            <div class="commenting">
+                    <form>
+                        <div class="form-group">
+                            <label for="comment">Comment:</label>
+                            <input type="text" id = "comment1" class="form-control" id="usr">
+                        </div>
+                        
+                    <!-- <button type="submit" value="postcomment" onclick = "myFun(document.getElementById('comment1').value);"> -->
+                    <!-- <form id='submit-form'>
+                            <button type='submit'>submit</button>
+                          </form> -->
+                </form>
+                <button type='submit' onclick = "myFun(document.getElementById('name').value,document.getElementById('comment1').value, document.getElementById('password').value);">submit</button>
+            </div>
+            <div id="alerter" class="alert alert-warning" style="display:none;">
+                <strong>Warning!</strong> Comment or Name or password are null;
+            </div>
+        </div>
+        <div class="commentSection">
+            <p style="text-align:left">latest comment here:</p>
+            <p id="commentarea"></p>
+        </div>
+        
+
+    </div>
+    <!-- Script tag here -->
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
