@@ -1,0 +1,6 @@
+<div *ngIf = "quantity[index] >= 0">
+<p>{{cartObjArr[index].title}}</p>
+<p>quantity: {{quantity[index]}}</p>
+<button (click) = "decrease();">-</button><button (click) = "increase();">+</button>
+<button (click) = "remove();">remove</button>
+</div>

@@ -1,0 +1,15 @@
+<div class="card mb-3">
+    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+    <div *ngIf = "objt!=null">
+      <div class="card-body">
+        <h5 class="card-title">{{objt[ind].title}}</h5>
+        <p class="card-text">{{objt[ind].description}}</p>
+        <p class="card-text">{{objt[ind].quantity}}</p>
+        <button (click)="addToCart()"> Add to cart</button>
+        <div *ngIf = "added">
+          <p> product added to the cart</p>
+        </div>
+      </div>
+    </div>
+  </div>
+

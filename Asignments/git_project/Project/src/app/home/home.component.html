@@ -1,0 +1,9 @@
+
+<input  [(ngModel)]="filterName" placeholder="Search for your product..">
+
+<h2>Grab your product</h2>
+<div *ngFor = 'let name of prods | filterByName:filterName index as i'>
+  <nav>
+  <a class = "b" routerLink = "/product-detail/{{i}}">{{name}}</a>
+</nav>
+</div>

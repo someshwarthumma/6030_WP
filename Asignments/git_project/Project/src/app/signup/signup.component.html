@@ -1,0 +1,12 @@
+<div class="login-page">
+    <div class="form">
+      <form class="register-form">
+        <input type="text" [(ngModel)] = "username" name = "usrname" placeholder="name"/>
+        <input type="password" [(ngModel)] = "password" name = "pasw" placeholder="password"/>
+        <input type="text" [(ngModel)] = "email" name = "emailID" placeholder="email address"/>
+        <button (click) = "submit()">create</button>
+        <p class="message">Already registered? <a routerLink="/login">Sign In</a></p>
+      </form>
+    </div>
+</div>
+  

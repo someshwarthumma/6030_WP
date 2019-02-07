@@ -1,0 +1,10 @@
+<div *ngIf = "cartObjArr.length > 0">
+    <div *ngFor = "let x of cartIndex">
+    <!-- <p>{{cartObjArr[x].title}}</p> -->
+    <app-cart-item-details [index] = "x"></app-cart-item-details>
+    
+    </div>
+    <br>
+    <button routerLink = "/check-out"> click here to check out</button>
+</div>
+<!-- <button routerLink = "/checkout"> click here to check out</button> -->
