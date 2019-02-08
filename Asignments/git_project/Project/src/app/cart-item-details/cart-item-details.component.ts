@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,EventEmitter,Output } from '@angular/core';
 import { CartService } from '../cart.service';
 
 @Component({
@@ -10,7 +10,11 @@ export class CartItemDetailsComponent implements OnInit {
   
   @Input() index;
   cartObjArr = [];
-  quantity:Number[];
+  quantity:number[];
+  // productTotal:number;
+  // @Output() onChecked= new EventEmitter();
+  // @Output() onChecked1= new EventEmitter();
+  
   constructor(public c:CartService ) {
     this.cartObjArr = c.getCartItem();
     this.quantity = c.getQuantity();
@@ -27,6 +31,10 @@ export class CartItemDetailsComponent implements OnInit {
   }
   ngOnInit() {
     this.quantity = this.c.getQuantity();
+    // this.productTotal = this.quantity[this.index]*this.cartObjArr[this.index].price;
+    // console.log("productTotal: in cart-item-details: "+this.productTotal);
+    // this.onChecked.emit(this.productTotal);
+    // this.onChecked1.emit(this.index);
   }
 
 }

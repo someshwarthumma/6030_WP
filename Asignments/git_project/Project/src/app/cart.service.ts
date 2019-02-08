@@ -9,6 +9,7 @@ export class CartService {
   cartArr = []
   cartIndex = [];
   quantity:Array<number>= [];
+  totalArr:Array<number> = [];
   constructor(public data : ProductsService) { 
     this.data.getData().subscribe((x)=> {this.prods = x});
   }
@@ -20,6 +21,7 @@ export class CartService {
     console.log(this.cartArr);
     this.quantity[index] = 1;
     this.cartIndex[index] = index;
+    this.totalArr.push(index);
     console.log("cart Index: in addtocart if "+this.cartIndex);
   } else{
     this.quantity[index] = this.quantity[index] + 1;
@@ -56,9 +58,13 @@ export class CartService {
   getCartIndices(){
     return this.cartIndex;
   }
+  getTotalArr(){
+    // console.log(this.totalArr)
+    return this.totalArr;
+  }
   getQuantity(){
     // console.log(index);
-    console.log((this.quantity));
+    // console.log((this.quantity));
     return this.quantity;
   }
 }

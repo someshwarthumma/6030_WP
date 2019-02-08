@@ -1,6 +1,7 @@
-<div *ngIf = "quantity[index] >= 0">
+<div *ngIf = "quantity[index] >= 0 && cartObjArr[index].price != null">
 <p>{{cartObjArr[index].title}}</p>
 <p>quantity: {{quantity[index]}}</p>
 <button (click) = "decrease();">-</button><button (click) = "increase();">+</button>
 <button (click) = "remove();">remove</button>
+<p>productTotal: {{quantity[index]*cartObjArr[index].price}}</p>
 </div>

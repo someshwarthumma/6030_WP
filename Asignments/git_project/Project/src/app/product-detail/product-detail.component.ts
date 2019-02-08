@@ -29,7 +29,7 @@ export class ProductDetailComponent implements OnInit {
   addToCart(){
     this.cartService.addCartItem(this.ind);
     
-    alert("product added to the cart!");
+    // alert("product added to the cart!");
   }
 
   ngOnInit() {
