@@ -10,7 +10,6 @@ import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { HttpClientModule} from '@angular/common/http';
 import { CartItemDetailsComponent } from './cart-item-details/cart-item-details.component';
-import {CheckOutComponent} from './check-out/check-out.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,8 +19,7 @@ import {CheckOutComponent} from './check-out/check-out.component';
     SignupComponent,
     LoginComponent,
     CartComponent,
-    CartItemDetailsComponent,
-    CheckOutComponent
+    CartItemDetailsComponent
   ],
   imports: [
     BrowserModule,

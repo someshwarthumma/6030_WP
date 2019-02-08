@@ -6,8 +6,12 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductsService {
+  ifloggedIN: boolean;
+  loggedUser: string;
+  totalBill = 0;
   obj;
   prods = [];
+  name;
   cartArr:Array<any> = [];
   constructor(private httpClient: HttpClient) { }
 
@@ -29,5 +33,12 @@ export class ProductsService {
       headers: headers
     });
     return fla;
+  }
+
+  addReview(ind, rvw) {
+    var reviewObj = {"index": ind, "review" : rvw}; 
+    let flag = this.httpClient.post('http://127.0.0.1:4201/review', reviewObj);
+    return flag;
+
   }
 }
