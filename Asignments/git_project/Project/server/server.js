@@ -37,15 +37,29 @@ app.post('/signup', jsonparser, (req, res) =>  {
     } 
 });
 
+app.put('/update', jsonparser, (req, res) => {
+    console.log(req.body);
+    // db.getDB().collection("products")
+    db.getDB().collection("products").findOneAndUpdate({name : req.body.name},
+                                                        {$set: {quantity: req.body.quant}},
+                                                        {new:true},(err, result) => {
+        if(err) throw err;
+        else console.log("updated");
+    });
+});
+
 app.post('/review', jsonparser, (req, res) =>  {
     db.getDB().collection(reviewTable).insertOne(req.body, function(err, res) {
       if (err) throw err;
       console.log("1 document inserted");
-      flagOne = true;
     });
-    if(flagOne == true) {
-        res.send(true);
-    } 
+});
+
+app.post('/reviewsInfo', jsonparser, (req, res) =>  {
+    db.getDB().collection(reviewTable).find({mobileID: req.body.mid}).toArray((err, rws) =>{
+      if (err) throw err;
+      res.send(rws);
+    });
 });
 
 app.post('/login', jsonparser, (req, res) => {
@@ -54,15 +68,16 @@ app.post('/login', jsonparser, (req, res) => {
     console.log(req.body);
     var query = {name :req.body.name}
     db.getDB().collection("user_details").find(query).toArray(function(err, result) {
-        if(err) throw err;
-        console.log(result[0].password);
-        console.log(req.body.password);
-        if(result[0].password === req.body.password) {
-            console.log("hai");
-            res.send(true);
-        } else {
-            res.send(false);
+        if(err | result.length === 0) res.send(false);
+        else {
+            if(result[0].password === req.body.password) {
+                console.log("hai");
+                res.send(true);
+            } else {
+                res.send(false);
+            }
         }
+
     });
 
 });

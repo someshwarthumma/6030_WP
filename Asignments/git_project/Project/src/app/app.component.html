@@ -9,7 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <h2   style = "text-align: center">Welcome to Shoppers Hub</h2>
+  <h2 style = "text-align: center"><img src="../assets/logo.png" style="height: 80px; width:200px"></h2>
   <div class="topnav">
       <a routerLink="/home"><span class="glyphicon glyphicon-home"></span> Home</a>
       <a routerLink="" *ngIf ="this.data.ifloggedIN == true" style="font-style: italic">Hello! {{this.data.loggedUser}}</a>
@@ -18,7 +18,7 @@
       <a  routerLink="/login" style="float: right" *ngIf ="this.data.ifloggedIN != true">Login</a>
       <a routerLink="/signup" style="float: right" *ngIf ="this.data.ifloggedIN != true">Sign Up</a>
       <a  routerLink="/home" style="float: right" (click)="loggedOut()" *ngIf ="this.data.ifloggedIN == true">Logout <span class="glyphicon glyphicon-off"></span></a>
-      <a routerLink="/cart" style="float: right"> <span class="glyphicon glyphicon-shopping-cart"></span> Cart</a>
+      <a routerLink="/cart" style="float: right"> <span class="glyphicon glyphicon-shopping-cart"></span> In Cart [ {{this.data.cartquantity}} ]</a>
 
   </div>
   <!-- <app-home-component></app-home-component> -->

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ProductsService} from './products.service';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,8 @@ export class CartService {
   prods = [];
   cartArr = []
   cartIndex = [];
-  quantity:Array<number>= [];
-  constructor(public data : ProductsService) { 
+  quantity = [];
+  constructor(public data : ProductsService, private httpClient: HttpClient) { 
     this.data.getData().subscribe((x)=> {this.prods = x});
   }
   addCartItem(index){
@@ -60,5 +61,11 @@ export class CartService {
     // console.log(index);
     console.log((this.quantity));
     return this.quantity;
+  }
+
+  updateQuantity(idt, newQ) {
+    var obj = {name: idt, quant : newQ };
+    console.log(obj);
+    this.httpClient.put('http://127.0.0.1:4201/update', obj).subscribe();
   }
 }

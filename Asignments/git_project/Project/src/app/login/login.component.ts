@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   ifloggedIN;
   username;
-  password;
+  password; 
   flag: boolean; 
   fl: any;
   flg: boolean;

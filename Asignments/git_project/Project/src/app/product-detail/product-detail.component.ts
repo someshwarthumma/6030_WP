@@ -11,11 +11,13 @@ import {CartService} from '../cart.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
+  price;
   rvw;
   objt;
   ind;
   name;
   password;
+  reviewObj;
   added:boolean = false;
   constructor(
     private route: ActivatedRoute,
@@ -30,12 +32,19 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit() {
   }
   addToCart(){
+    // this.data.cartquantity += 1;
     this.added = true;
+    this.data.totalBill += this.objt[this.ind].price;
+    this.data.cartquantity +=1;
     this.cartService.addCartItem(this.ind);
   }
 
+  getReview() {
+    this.data.getReviews(this.objt[this.ind]._id).subscribe(x => {this.reviewObj = x})
+  }
+ 
   review() {
-    this.data.addReview(this.ind, this.rvw);
+    this.data.addReview(this.objt[this.ind]._id, this.rvw);
   }
 
 }

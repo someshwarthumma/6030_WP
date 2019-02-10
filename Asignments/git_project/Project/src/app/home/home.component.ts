@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Pipe, PipeTransform } from '@angular/core';
 import { ProductsService} from '../products.service';
-
+var productArray;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   prods = [];
   flag:boolean = false;
   constructor(public data : ProductsService) { 
-    this.data.getData().subscribe((x)=> {this.products = x;this.loadIt()});
+    this.data.getData().subscribe((x)=> {while((productArray ===undefined)) productArray = x; this.products = x; this.loadIt()});
   }
 
   ngOnInit() {
@@ -27,9 +27,14 @@ export class HomeComponent implements OnInit {
 
 @Pipe({name: 'filterByName'})
 export class filterNames implements PipeTransform {
-  transform(listOfNames: string[], nameToFilter: string): string[] {
-    if(!listOfNames) return null;
-    if(!nameToFilter) return listOfNames;
-    return listOfNames.filter(n => n.indexOf(nameToFilter) >= 0);
+  construct() {}
+  transform(listOfNames: string[], nameToFilter: string): number[] {
+    if(!listOfNames || !nameToFilter) return null;
+    listOfNames = listOfNames.filter(n => n.toLowerCase().indexOf(nameToFilter.toLowerCase()) !== -1);
+    var cards = productArray;
+    cards = cards.filter(card => listOfNames.includes(card.name));
+    var indexArray: number[] = [];
+    cards.forEach(card => indexArray.push(productArray.indexOf(card)));
+    return indexArray;
   }
 }
